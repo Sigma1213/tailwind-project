@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <link rel="shortcut icon" href="./assets/fevicion.jpg" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black font-sans">
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+
+  <div class="flex items-center justify-center h-screen">
+    <div class="relative p-10 bg-white bg-opacity-25 rounded-lg border border-white30 flex flex-col items-center">
+      <div>
+        <img src="./assets/Mahendra-Singh-Dhoni.webp" alt="user" class="border-2 border-white30 w-32 h-32 rounded-full">
+      </div>
+      <div class="user-name">
+        <h2 class="text-white text-2xl">Mahendra Singh Dhoni</h2>
+      </div>
+      <div class="designation">
+        <h3 class="text-white65 text-center">Indian professional cricketer</h3>
+      </div>
+      <div class="bottom-group space-x-4">
+        <button onclick="openModal()" class="btn-share btn-card flex items-center gap-2">
+          <i class="fab fa-share"></i>
+          <div>Share My Profile</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white59 w-96 scale-0 bg-black bg-opacity-88 backdrop-blur-10 text-white z-10 rounded-lg transition duration-500 ease-in-out">
+    <div class="flex justify-between items-center pb-4 border-b border-white88">
+      <h1 class="text-xl">Share My Profile</h1>
+      <div>
+        <i onclick="closeModal()" class="fas fa-times cursor-pointer"></i>
+      </div>
+    </div>
+    <div class="pt-4">
+      <h3 class="text-lg">Share this via</h3>
+      <div class="flex justify-center mt-4">
+        <a href="https://twitter.com/MSDhoni" class="icon text-center" id="twitter" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="fixed top-0 left-0 w-full h-full bg-gray-500 opacity-0 pointer-events-none transition duration-500 ease-in-out" onclick="closeModal()"></div>
+
+  <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+
+  <script>
+    const modal = document.querySelector(".fixed.w-96");
+    const overlay = document.querySelector(".fixed.bg-gray-500");
+
+    // Modal open function
+    const openModal = () => {
+      console.log("Modal is Open");
+      modal.classList.add("scale-100");
+      overlay.classList.add("opacity-50", "pointer-events-auto");
+    };
+
+    // Modal close function
+    const closeModal = () => {
+      modal.classList.remove("scale-100");
+      overlay.classList.remove("opacity-50", "pointer-events-auto");
+    };
+  </script>
+</body>
+
+</html>
